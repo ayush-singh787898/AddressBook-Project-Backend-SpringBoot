@@ -1,55 +1,69 @@
 📖 Address Book Application
-🔹 Overview
-The Address Book Application is a full-stack project featuring an Angular-based frontend and a Spring Boot backend. The backend is integrated with MySQL 🛢️, Redis ⚡, RabbitMQ 📩, Swagger 📜, and Gmail App Password Authentication 📧 for secure email services.
+A full-stack application using Angular & Spring Boot with MySQL, Redis, RabbitMQ, Swagger, and Gmail authentication.
 
+
+🚀 Features
+✅ User Authentication (JWT-based)
+✅ CRUD Operations (Add, Edit, Delete Contacts)
+✅ MySQL Database Integration
+✅ Redis Caching for Performance
+✅ RabbitMQ for Message Queues
+✅ Swagger API Documentation
+✅ Gmail App Password Authentication
+
+📌 Tech Stack
+Frontend	Backend	Database	Other Services
+TypeScript	Java	SQL	RabbitMQ
+Bootstrap	Spring Security	JPA/Hibernate	Swagger API Docs
 🎨 Frontend Setup (Angular 17)
-✅ Prerequisites
-Before running the frontend, make sure you have:
-✔️ Node.js and npm installed
-✔️ Angular CLI installed
+🔹 Prerequisites
+Ensure you have the following installed:
 
-🚀 Steps to Set Up and Run the Frontend
-1️⃣ Clone the repository:
+📌 Node.js & npm
 
+📌 Angular CLI
+
+⚡ Installation & Running
 git clone https://github.com/ayush-singh787898/AddressBook-Project-Backend-SpringBoot.git
 cd client_AddressBook
-2️⃣ Install dependencies:
-
 npm install
-3️⃣ Start the Angular development server:
-
 ng serve
-4️⃣ Access the application:
-Open your browser and navigate to 🌐 http://localhost:4200.
+🌍 Now, open your browser and visit http://localhost:4200 🎉
 
 🛠️ Backend Setup (Spring Boot)
-✅ Prerequisites
-Before running the backend, ensure the following services are installed and properly configured:
-🔹 MySQL (Database) 🛢️
-🔹 Redis (Caching) ⚡
-🔹 RabbitMQ (Message Broker) 📩
-🔹 Swagger (API Documentation) 📜
-🔹 Gmail App Password (For email authentication) 📧
+🔹 Prerequisites
+Before running the backend, ensure the following services are set up:
+✅ MySQL 🛢️
+✅ Redis ⚡
+✅ RabbitMQ 📩
+✅ Swagger API Docs 📜
+✅ Gmail App Password 📧
 
-🏗️ Steps to Configure and Run the Backend
+⚡ Steps to Configure & Run
 🔹 1. Configure MySQL
-Update application.properties with your MySQL username and password.
+Update your application.properties with:
 
-🔹 2. Setup Gmail App Password
-Enable 2-Step Verification in your Gmail account.
+spring.datasource.url=jdbc:mysql://localhost:3306/addressbook
+spring.datasource.username=your_mysql_username
+spring.datasource.password=your_mysql_password
+🔹 2. Set Up Gmail App Password
+Enable 2-Step Verification in Gmail
 
-Generate an App Password and update it in application.properties.
+Generate an App Password
 
-🔹 3. Start the Spring Boot Backend
-Run the backend application using:
+Update application.properties:
+
+spring.mail.username=your_email@gmail.com
+spring.mail.password=your_app_password
+🔹 3. Start Backend
+Run the backend application:
 
 mvn spring-boot:run
-🔹 4. User Registration via Postman
+🔹 4. API Endpoints (Test via Postman)
 📌 Register a New User
-Make a POST request to create a new user:
 
 POST http://localhost:8080/api/auth/register
-📄 Request Body (JSON - raw):
+📄 Request Body (JSON - raw)
 
 {
   "username": "your_username",
@@ -58,27 +72,34 @@ POST http://localhost:8080/api/auth/register
   "password": "your_password"
 }
 🔑 Login Request
-Authenticate the user by sending a POST request:
 
 POST http://localhost:8080/api/auth/login
-📄 Request Body (JSON - raw):
+📄 Request Body (JSON - raw)
 
 {
   "username": "your_username",
   "password": "your_password"
 }
-✅ On successful login, you will receive a user ID.
+✅ Successful Login Response
 
+{
+  "userId": 1,
+  "token": "your_jwt_token"
+}
 🔹 5. Update AddressBookController
-✏️ Modify the username at line 114 to match your registered username.
-✏️ Update the user ID at line 139 (Default: 1 for initial setup).
+✏️ Modify the username at line 114 and user ID at line 139 for first-time setup.
+
+📄 API Documentation
+📜 Swagger UI is available at:
+http://localhost:8080/swagger-ui.html
 
 🎯 Final Steps
-Once both the frontend and backend are successfully configured and running, your Address Book Application will be fully functional. 🎉
+Once everything is set up, both frontend and backend should be up and running smoothly! 🚀
 
-💡 Need help? Feel free to reach out!
+💡 Need Help?
+For any issues or support, feel free to reach out!
 
-🤝 Best Regards,
-💻 Ayush Kumar Singh
+📧 Contact: ayushsingh05086@gmail.com
+👨‍💻 Author: Ayush Kumar Singh
 
-📩 Contact: ayushsingh05086@gmail.com
+🌟 If you find this project useful, consider giving it a star! ⭐
